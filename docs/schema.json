@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "title": "MkDocs plugin to integrate your HTML report into your site.",
+  "type": "object",
+  "properties": {
+    "reports": {
+      "markdownDescription": "https://josham.github.io/mkdocs-iframe",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "name": {
+                "title": "The name of the HTML report.",
+                "type": "string"
+              },
+              "path": {
+                "title": "The path to HTML report directory.",
+                "type": "string",
+                "default": null
+              },
+              "root": {
+                "title": "The root html file of the report.",
+                "type": "string",
+                "default": null
+              },
+              "page": {
+                "title": "The doc page for the nav.",
+                "type": "string",
+                "default": null
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}
